@@ -15,4 +15,4 @@ Study   <- c("Gross & John (2003)",
              "Kashdan et al. (2006)", 
              "Schutte et al. (2009)") #Create a vector with names of studies.
 
-metacor(r, N, Study)                  #Run function metacor from "meta" to meta analyze correlations.
+metacor(r, N, Study)                  #Run function metacor from "meta" to meta analyze correlations. 
