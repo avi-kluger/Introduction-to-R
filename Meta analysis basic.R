@@ -17,3 +17,15 @@ Study   <- c("Gross & John (2003)",
 Study   <- paste0 ("Study ", 1:4,": ", Study)
 
 metacor(r, N, Study)                  #Run function metacor from "meta" to meta analyze correlations.
+
+fit <- metacor(r, N, Study)           #Run function metacor from "meta" to meta analyze correlations. 
+class(fit)
+methods(class = "meta") 
+as.data.frame(fit)
+forest(fit)
+funnel(fit)
+metabias(fit)
+print(fit)
+summary(fit)
+trimfill(fit)
+update(fit)
