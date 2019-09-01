@@ -11,7 +11,6 @@ r       <- c(.43, .57, .19, .47)
 # Create a vector with sample sizes
 N       <- c(89, 60, 128, 100)        
 
-
 # Import a package for your computer, only once for each computer
 install.packages("meta")
 
