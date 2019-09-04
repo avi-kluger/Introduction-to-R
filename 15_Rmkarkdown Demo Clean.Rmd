@@ -1,0 +1,45 @@
+---
+title: "RMarkdown Demo"
+author: "Avi Kluger"
+date: "September 3, 2019"
+output:
+  html_document: default
+  word_document: default
+---
+## Method
+### Participants
+
+```{r echo=FALSE}
+load("corTable.RData")
+attach(l_df)
+```
+A total of `r nrow(l_df)` answered the listening survey, *M*~age~ = `r round(mean(Age, na.rm = TRUE), 1)` (`r round(sd(Age, na.rm = TRUE), 2)`), `r round((mean(gender, na.rm = TRUE) - 1) *100, 1)`% females.
+
+### Results
+
+For descritive statistics, see Table 1.
+
+```{r echo=FALSE, message=FALSE}
+library('psych')
+library('knitr')
+
+Table1 <- describe(l_df[, scaleColumns])[, c("mean", "sd", "skew", "kurtosis")]
+
+kable(round(Table1, 2), 
+      caption = "Table 1. Descriptive statistics for listening-related scales")
+```
+
+Surprisingly, we did not find the interaction we did not hypothesized.  As can be seen in Figure 1.
+
+```{r echo=FALSE, message=FALSE}
+suppressWarnings(library('pequod'))
+mod <- lmres(support ~ PAIR*tenure, center = c("PAIR", "tenure"), 
+             data = l_df)
+S_slopes <- simpleSlope(mod, pred = "PAIR", mod1 = "tenure")
+theme_set(theme_bw())
+PlotSlope(S_slopes)
+```
+
+*Figure 1.* The effect of learning **too much R in one week** on the well-being of novices by tenure in using SPSS or Stata
+
+

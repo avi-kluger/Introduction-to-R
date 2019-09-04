@@ -12,16 +12,15 @@ cat ("\014")
 # Try to read the csv file, and fail if file is not in your working directory
 listen_df <- read.csv("listenData.csv", stringsAsFactors = FALSE)
 
-
 # Find (get) working directory (wd). Note that the address has forward slashes 
 # a backslash leans backwards ( \ ), while a forward slash leans forward ( / )
 getwd()
 
 # Change (set) working directory (wd)
 # if you copy from windows, either revrese the slashes or use double slash
-setwd("C:/Users/owner/Dropbox/Files/Courses/R/RFall-2019/RFall-2019")
+setwd("C:/Users/owner/Dropbox/Files/Courses/R/RFall-2019")
 getwd()
-setwd("C:\\Users\\owner\\Dropbox\\Files\\Courses\\R\\RFall-2019\\RFall-2019")
+setwd("C:\\Users\\owner\\Dropbox\\Files\\Courses\\R\\RFall-2019")
 getwd()
 
 # read a file that has comma-separated values
@@ -31,18 +30,19 @@ listen_df <- read.csv("listenData.csv", stringsAsFactors = FALSE)
 # Go the the folder with the data.  Choose Copy Dropbox Link, paste
 # the address into read.csv function AND change the 0 in the end to 1.
 
-# https://www.dropbox.com/s/modnpbbqjrmuodr/listenSurvey.csv?dl=0
+# https://www.dropbox.com/s/m194hmugwlm37kg/listenData.csv?dl=0
 listen_df <- read.csv(
-             "https://www.dropbox.com/s/3dsn0wlnowy7d1p/listenSurvey.csv?dl=1",
+             "https://www.dropbox.com/s/m194hmugwlm37kg/listenData.csv?dl=1",
              stringsAsFactors = FALSE)
 # read (the same) data from the internet
 # paste the internet address
-# https://raw.githubusercontent.com/avi-kluger/RWorkshop-2019/master/Read%20%26%20Clean%20Data/listenSurvey.csv
+# https://raw.githubusercontent.com/avi-kluger/Introduction-to-R/master/listenData.csv
 # To improve readability, break the pasted address to short section, wrap 
 # sections with "", separate them with commas, wrap with paste0, and wrap with
 # read.csv
+
 listen_df <- read.csv(paste0("https://raw.githubusercontent.com/avi-kluger/",
-                             "RWorkshop-2019/master/listenSurvey.csv"),
+                             "Introduction-to-R/master/listenData.csv"),
                              stringsAsFactors = FALSE)
 
 # read diffrent data from the internet in SPSS format.  This can cause problems
@@ -60,7 +60,6 @@ listenTalk_df <- read_excel("listenTalk.xlsx")
 listenTalk_df
 listenTalk_df <- as.data.frame(listenTalk_df)
 listenTalk_df
-
 
 # Read Qualtics data:
 
