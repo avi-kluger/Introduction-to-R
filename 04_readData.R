@@ -34,6 +34,9 @@ listen_df <- read.csv("listenData.csv", stringsAsFactors = FALSE)
 listen_df <- read.csv(
              "https://www.dropbox.com/s/m194hmugwlm37kg/listenData.csv?dl=1",
              stringsAsFactors = FALSE)
+
+# Additional options -----------------------------------------------------------
+
 # read (the same) data from the internet
 # paste the internet address
 # https://raw.githubusercontent.com/avi-kluger/Introduction-to-R/master/listenData.csv

@@ -53,6 +53,8 @@ buildScale <- function(scaleNames, df = l_df) {
 
 scaleNames <- c("Empathy", "PAIR", "support", "SWL")
 
+# save results into external files
+
 sink("itemAnalysis.txt")
 pdf("itemAnalysis.pdf")
 l_df <- buildScale(scaleNames)
